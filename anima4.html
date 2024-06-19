@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="animati.css">
+</head>
+<body>
+
+    <!-- VLibras Widget -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <!-- End of VLibras Widget -->
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Animação</h2>
+            <div class="testimonial-item">
+                <p>"A Lagarta e Alice olharam-se por algum tempo em silêncio: finalmente, a
+                    Lagarta tirou o narguilé da boca e dirigiu-se a ela com uma voz lânguida e
+                    sonolenta."</p>
+            </div>
+        </div>
+    </section>
+      
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Codigo</h2>
+            <div class="testimonial-item">
+                    
+                <section class="code-block">
+                    <div class="header-container">
+                        <h2 class="letra">HTML</h2>
+                        <button class="btn" onclick="copyCode()">
+                            <img src="https://cdn-icons-png.flaticon.com/512/82/82172.png" width="15" height="15">
+                        </button>
+                    </div>
+            
+                    <div class="code-container" id="codeContainer">
+                        <pre><p>
+A Lagarta e Alice olharam-se por algum tempo em silêncio: finalmente, a
+Lagarta tirou o narguilé da boca e dirigiu-se a ela com uma voz lânguida e
+sonolenta.                                                
+              </p>
+<code class="html">
+                    </div>
+                    <div class="header-container">
+                        <h2 class="h2">CSS</h2>
+                        <button class="btn2" onclick="copyCode2()">
+                            <img src="https://cdn-icons-png.flaticon.com/512/82/82172.png" width="15" height="15">
+                        </button>
+                    </div>
+
+                    <div class="code-container" id="codeContainer2">
+                        <pre>
+                   
+    /* Animação slidein */
+    @keyframes slidein {
+    from {
+    opacity: 0;
+    transform: translateY(-50px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+                        }                    
+                    
+<code class="html">
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botões para aumentar e diminuir a fonte -->
+    <div class="font-size-controls">
+        <button onclick="changeFontSize('increase')">Aumentar Fonte</button>
+        <button onclick="changeFontSize('decrease')">Diminuir Fonte</button>
+    </div>
+
+    <script>
+        // Função para alterar o tamanho da fonte
+        function changeFontSize(type) {
+            var paragraphs = document.getElementsByTagName('p');
+            var fontSize;
+
+            for (var i = 0; i < paragraphs.length; i++) {
+                if (type === 'increase') {
+                    fontSize = parseFloat(window.getComputedStyle(paragraphs[i]).fontSize);
+                    paragraphs[i].style.fontSize = (fontSize + 1) + 'px';
+                } else if (type === 'decrease') {
+                    fontSize = parseFloat(window.getComputedStyle(paragraphs[i]).fontSize);
+                    paragraphs[i].style.fontSize = (fontSize - 1) + 'px';
+                }
+            }
+        }
+
+        // Função para copiar o código HTML
+        function copyCode() {
+            var codeContainer = document.getElementById('codeContainer');
+            var code = codeContainer.innerText;
+
+            var tempTextArea = document.createElement('textarea');
+            tempTextArea.value = code;
+            document.body.appendChild(tempTextArea);
+
+            tempTextArea.select();
+            tempTextArea.setSelectionRange(0, 99999); // Para dispositivos móveis
+
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            alert('Código copiado para a área de transferência!');
+        }
+
+        // Função para copiar o código CSS
+        function copyCode2() {
+            var codeContainer = document.getElementById('codeContainer2');
+            var code = codeContainer.innerText;
+
+            var tempTextArea = document.createElement('textarea');
+            tempTextArea.value = code;
+            document.body.appendChild(tempTextArea);
+
+            tempTextArea.select();
+            tempTextArea.setSelectionRange(0, 99999); // Para dispositivos móveis
+
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            alert('Código copiado para a área de transferência!');
+        }
+    </script>
+
+    <style>
+        /* Estilos para o corpo da página */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilo para o cabeçalho */
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Estilos para os blocos de conteúdo */
+        .container {
+            max-width: 800px;
+            margin: 20px auto; /* Centraliza o conteúdo horizontalmente */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonials .testimonial-item {
+            background: #f4f4f4;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            animation: slidein 6s ;
+            width: 80%;
+        }
+
+        /* Estilos para o bloco de código */
+        .code-block {
+            background: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Estilos para o cabeçalho dentro do bloco de código */
+        .code-block h2 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        /* Estilos para o código dentro do bloco de código */
+        .code-container {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 10px;
+        }
+
+        /* Estilos para os botões de cópia */
+        .btn, .btn2 {
+            padding: 10px 20px;
+            background-color: #797979;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px; /* Ajusta o espaçamento entre o botão e o título */
+        }
+
+        .btn:hover, .btn2:hover {
+            background-color: #666;
+        }
+
+        /* Estilos para o rodapé */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Animação slidein */
+        @keyframes slidein {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Estilos para os botões de aumentar e diminuir a fonte */
+        .font-size-controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .font-size-controls button {
+            margin: 0 10px;
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .font-size-controls button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+      
+</body>
+</html>

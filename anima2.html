@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código de Exemplo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<center>
+<div class="container1">
+<h1>Botão Colorido</h1>
+<br></div>
+        <button class="glow-on-hover" type="button">Passe e clique em mim!</button>
+    </center>
+</div>
+<br><br><br>
+<section id="testimonials" class="testimonials">
+    <div class="container">
+        <h2>Código</h2>
+        <div class="testimonial-item">
+            <section class="code-block">
+                <div class="header-container">
+                    <h2 class="letra">HTML</h2>
+                    <button class="btn" onclick="copyCode()">
+                        <img src="https://cdn-icons-png.flaticon.com/512/82/82172.png" width="15" height="15">
+                    </button>
+                </div>
+                
+                <div class="code-container" id="codeContainer">
+                <pre>&lt;button class="glow-on-hover" type="button"&gt;PASSE E CLIQUE EM MIM!&lt;/button&gt;</code></pre>
+    <code class="html">
+                </div>
+                <div class="header-container">
+                    <h2 class="h2">CSS</h2>
+                    <button class="btn2" onclick="copyCode2()">
+                        <img src="https://cdn-icons-png.flaticon.com/512/82/82172.png" width="15" height="15">
+                    </button>
+                </div>
+    
+                <div class="code-container" id="codeContainer2">
+                    <pre>
+    .glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    }
+
+    .glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    }
+
+    .glow-on-hover:active {
+    color: #000
+    }
+
+    .glow-on-hover:active:after {
+    background: transparent;
+    }
+
+    .glow-on-hover:hover:before {
+    opacity: 1;
+    }
+
+    .glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    } 
+
+    @keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+    }
+
+<style>
+
+
+.testimonials{
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+
+
+}   
+
+.testimonials .testimonial-item {
+    background: #f4f4f4;
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin: 1rem;
+    display: inline-block;
+    width: 70%;
+    animation-duration: 6s;
+    animation-name: slidein;
+    align-items: center;
+    justify-content: center;
+
+    text-align: left;
+    
+}
+
+.code-block {
+  background: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  height: 100%;
+}
+
+.code-block h2 {
+  margin-top: 0;
+}
+
+pre {
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+pre code {
+  display: block;
+}
+.btn {
+  padding: 10px 20px;
+  background-color: #797979;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 80%;
+ 
+}
+.btn:hover {
+  background-color: #797979;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+h2 {
+    margin: 0;
+    padding-right: 3px; /* Espaço entre o h2 e o botão */
+    font-size: 28px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.letra {
+  margin: 0;
+  padding-right: 3px; /* Espaço entre o h2 e o botão */
+  font-size: 28px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+.btn img {
+  vertical-align: middle;
+}
+.btn2 {
+  padding: 10px 20px;
+  background-color: #797979;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 82.7%;
+ 
+}
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+   
+}
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+.glow-on-hover:active {
+    color: #000}
+.glow-on-hover:active:after {
+    background: transparent;
+}
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+
+
+</style>
+<script>
+    function copyCode() {
+        // Seleciona o conteúdo do contêiner de código
+        var codeContainer = document.getElementById('codeContainer');
+        var code = codeContainer.innerText;
+
+        // Cria um elemento temporário de área de texto
+        var tempTextArea = document.createElement('textarea');
+        tempTextArea.value = code;
+        document.body.appendChild(tempTextArea);
+
+        // Seleciona o conteúdo do elemento temporário
+        tempTextArea.select();
+        tempTextArea.setSelectionRange(0, 99999); // Para dispositivos móveis
+
+        // Executa o comando de cópia
+        document.execCommand('copy');
+
+        // Remove o elemento temporário
+        document.body.removeChild(tempTextArea);
+
+        // Alerta o usuário
+        alert('Código copiado para a área de transferência!');
+    }
+    function copyCode2() {
+        // Seleciona o conteúdo do contêiner de código
+        var codeContainer = document.getElementById('codeContainer2');
+        var code = codeContainer.innerText;
+
+        // Cria um elemento temporário de área de texto
+        var tempTextArea = document.createElement('textarea');
+        tempTextArea.value = code;
+        document.body.appendChild(tempTextArea);
+
+        // Seleciona o conteúdo do elemento temporário
+        tempTextArea.select();
+        tempTextArea.setSelectionRange(0, 99999); // Para dispositivos móveis
+
+        // Executa o comando de cópia
+        document.execCommand('copy');
+
+        // Remove o elemento temporário
+        document.body.removeChild(tempTextArea);
+
+        // Alerta o usuário
+        alert('Código copiado para a área de transferência!');
+    }
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+    <!-- Este script inicializa o widget VLibras. A função 'VLibras.Widget' é chamada com a URL base do app VLibras, configurando o widget no site. -->
+</script>
+</body>
+</html>

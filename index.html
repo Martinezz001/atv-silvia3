@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animações</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+        }
+        .theme-toggle, .font-size-buttons {
+            position: absolute;
+            top: 10px;
+        }
+        .theme-toggle {
+            right: 50px;
+        }
+        .font-size-buttons {
+            right: 10px;
+        }
+        .font-size-buttons button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .block {
+            width: 30%;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .block h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .block p {
+            font-size: 18px;
+        }
+        .block a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .block a:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Estilos para diferentes filtros de daltonismo */
+        .filter-image.achromatomaly {
+            filter: grayscale(100%);
+        }
+        .filter-image.deuteranomaly {
+            filter: hue-rotate(180deg);
+        }
+        .filter-image.tritanomaly {
+            filter: sepia(100%) saturate(300%) hue-rotate(-50deg);
+        }
+        .filter-image.acromatomia {
+            filter: grayscale(50%);
+        }
+        .filter-image.deuteranopia {
+            filter: sepia(100%) grayscale(75%) hue-rotate(45deg);
+        }
+        .filter-image.protanopia {
+            filter: sepia(55%) saturate(300%);
+        }
+        /* Estilos para o tema escuro */
+        body.dark-theme {
+            background-color: #121212;
+            color: #fff;
+        }
+        header.dark-theme, footer.dark-theme {
+            background-color: #000;
+        }
+        .container.dark-theme {
+            background-color: #333;
+        }
+        .block.dark-theme {
+            background-color: #444;
+            border-color: #555;
+        }
+        .block.dark-theme a {
+            background-color: #0056b3;
+        }
+        .block.dark-theme a:hover {
+            background-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+<header>
+   
+    <h1>Animações com HTML e CSS</h1>
+    <button class="theme-toggle" id="theme-toggle">
+        <img src="sun-icon.png" alt="Toggle Theme">
+        <div class="font-size-buttons">
+            <button id="increase-font">A+</button>
+            <button id="decrease-font">A-</button>
+        </div>
+    </button>
+    <br><br>
+    
+</header>
+
+<div class="container">
+   
+    <div class="block">
+        
+        <h2>Nível 1</h2>
+        <p> Neste nível você pode ver animações com texto e até mesmo vizualizar o código utilizado!</p>
+        <a href="animat.html">Ir para a Animação 1</a>
+    </div>
+
+    <div class="block">
+        <h2>Nível 2</h2>
+        <p>Neste nível você pode ver animações com texto esmaecendo e até mesmo vizualizar o código utilizado!</p>
+        <a href="anima4.html">Ir para a Animação 2</a>
+    </div>
+
+    <div class="block">
+        <h2>Nível 3</h2>
+        <p>Neste nível você pode ver animações com bolinhas e até mesmo vizualizar o código utilizado!</p>
+        <a href="anima3.html">Ir para a Animação 3</a>
+    </div>
+</div>
+
+<!-- Seletor de filtro de daltonismo -->
+<div style="text-align: center; margin-top: 20px;">
+    <label for="color-filter">Escolha um filtro para daltonismo:</label>
+    <select id="color-filter">
+        <option value="default">Nenhum</option>
+        <option value="achromatomaly">Achromatomaly</option>
+        <option value="deuteranomaly">Deuteranomaly</option>
+        <option value="tritanomaly">Tritanomaly</option>
+        <option value="acromatomia">Acromatomia</option>
+        <option value="deuteranopia">Deuteranopia</option>
+        <option value="protanopia">Protanopia</option>
+    </select>
+</div>
+
+<footer>
+    <p>desenvolvido por Kauã e Martinez &copy; 2024</p>
+    <!-- Código do VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+</footer>
+
+<script>
+// Adiciona um evento de mudança ao elemento com o id 'color-filter'
+document.getElementById('color-filter').addEventListener('change', function() {
+    // Atribui o valor da propriedade value do elemento atual à variável filterClass
+    const filterClass = this.value;
+
+    // Seleciona todas as imagens com a classe 'filter-image'
+    const images = document.querySelectorAll('.filter-image');
+
+    // Para cada imagem selecionada, remove todas as classes existentes da imagem, exceto 'filter-image'
+    images.forEach(img => {
+        img.className = 'filter-image'; // Reseta a classe
+
+        // Se a classe selecionada não for 'default' (ou seja, uma opção de filtro foi selecionada)
+        if (filterClass !== 'default') {
+            // Adiciona a classe selecionada à imagem
+            img.classList.add(filterClass);
+        }
+    });
+});
+
+new window.VLibras.Widget('https://vlibras.gov.br/app');
+
+// Função para alternar o tema
+const toggleButton = document.getElementById('theme-toggle');
+toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    document.querySelector('header').classList.toggle('dark-theme');
+    document.querySelector('footer').classList.toggle('dark-theme');
+    document.querySelector('.container').classList.toggle('dark-theme');
+    document.querySelectorAll('.block').forEach(block => {
+        block.classList.toggle('dark-theme');
+    });
+
+    // Alterna o ícone do botão
+    const img = toggleButton.querySelector('img');
+    if (document.body.classList.contains('dark-theme')) {
+        img.src = 'moon-icon.png';
+        img.alt = 'Light Theme';
+    } else {
+        img.src = 'sun-icon.png';
+        img.alt = 'Dark Theme';
+    }
+});
+
+// Função para alterar o tamanho da fonte
+let fontSize = 16; // Tamanho de fonte inicial em pixels
+const increaseFontButton = document.getElementById('increase-font');
+const decreaseFontButton = document.getElementById('decrease-font');
+
+increaseFontButton.addEventListener('click', () => {
+    fontSize += 2;
+    document.body.style.fontSize = fontSize + 'px';
+});
+
+decreaseFontButton.addEventListener('click', () => {
+    fontSize -= 2;
+    if (fontSize < 10) fontSize = 10; // Define um tamanho mínimo para a fonte
+    document.body.style.fontSize = fontSize + 'px';
+});
+</script>
+</body>
+</html>

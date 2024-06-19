@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="animati.css">
+</head>
+<body>
+
+    <!-- VLibras Widget -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <!-- End of VLibras Widget -->
+    <div class="font-size-controls">
+        <button onclick="changeFontSize('increase')">Aumentar Fonte</button>
+        <button onclick="changeFontSize('decrease')">Diminuir Fonte</button>
+    </div>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Animação</h2>
+            <div class="testimonial-item">
+                <p>
+                A Lagarta e Alice olharam-se por algum tempo em silêncio: finalmente, a
+                Lagarta tirou o narguilé da boca e dirigiu-se a ela com uma voz lânguida e
+                sonolenta." 
+                </p>
+            </div>
+        </div>
+    </section>
+      
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Codigo</h2>
+            <div class="testimonial-item">
+                    
+                <section class="code-block">
+                    <div class="header-container">
+                        <h2 class="letra">HTML</h2>
+                        <button class="btn" onclick="copyCode()">
+                            <img src="https://cdn-icons-png.flaticon.com/512/82/82172.png" width="15" height="15">
+                        </button>
+                    </div>
+            
+                    <div class="code-container" id="codeContainer">
+                        <pre> 
+"A Lagarta e Alice olharam-se por algum tempo em silêncio: finalmente, a
+Lagarta tirou o narguilé da boca e dirigiu-se a ela com uma voz lânguida e
+sonolenta." 
+<code class="html">
+                    </div>
+                    <div class="header-container">
+                        <h2 class="h2">CSS</h2>
+                        <button class="btn2" onclick="copyCode2()">
+                            <img src="https://cdn-icons-png.flaticon.com/512/82/82172.png" width="15" height="15">
+                        </button>
+                    </div>
+
+                    <div class="code-container" id="codeContainer2">
+                        <pre>
+p {
+animation-duration: 3s;
+animation-name: slidein;
+animation-iteration-count: infinite;
+}
+                  
+ @keyframes slidein {
+from {
+margin-left: 100%;
+width: 300%;}
+
+to {
+  margin-left: 0%;
+  width: 100%;}
+}
+<code class="html">
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function copyCode() {
+            // Seleciona o conteúdo do contêiner de código
+            var codeContainer = document.getElementById('codeContainer');
+            var code = codeContainer.innerText;
+
+            // Cria um elemento temporário de área de texto
+            var tempTextArea = document.createElement('textarea');
+            tempTextArea.value = code;
+            document.body.appendChild(tempTextArea);
+
+            // Seleciona o conteúdo do elemento temporário
+            tempTextArea.select();
+            tempTextArea.setSelectionRange(0, 99999); // Para dispositivos móveis
+
+            // Executa o comando de cópia
+            document.execCommand('copy');
+
+            // Remove o elemento temporário
+            document.body.removeChild(tempTextArea);
+
+            // Alerta o usuário
+            alert('Código copiado para a área de transferência!');
+        }
+
+        function copyCode2() {
+            // Seleciona o conteúdo do contêiner de código
+            var codeContainer = document.getElementById('codeContainer2');
+            var code = codeContainer.innerText;
+
+            // Cria um elemento temporário de área de texto
+            var tempTextArea = document.createElement('textarea');
+            tempTextArea.value = code;
+            document.body.appendChild(tempTextArea);
+
+            // Seleciona o conteúdo do elemento temporário
+            tempTextArea.select();
+            tempTextArea.setSelectionRange(0, 99999); // Para dispositivos móveis
+
+            // Executa o comando de cópia
+            document.execCommand('copy');
+
+            // Remove o elemento temporário
+            document.body.removeChild(tempTextArea);
+
+            // Alerta o usuário
+            alert('Código copiado para a área de transferência!');
+        }
+
+        let fontSize = 16; // Tamanho de fonte inicial em pixels
+
+        document.getElementById('increase-font').addEventListener('click', () => {
+            fontSize += 2;
+            document.body.style.fontSize = fontSize + 'px';
+        });
+
+        document.getElementById('decrease-font').addEventListener('click', () => {
+            fontSize -= 2;
+            if (fontSize < 10) fontSize = 10; // Define um tamanho mínimo para a fonte
+            document.body.style.fontSize = fontSize + 'px';
+        });
+    </script>
+
+</body>
+</html>
